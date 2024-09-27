@@ -727,8 +727,8 @@
                 <div class="dropdown-menu" id="dropdown-menu">
                     <a href="#" id="models-link">Модели🦋</a>
                     <a id="orders-link" href="#">Заказы</a>
-                    <a href="#guarantees">Гарантии</a>
-                    <a href="#support">Тех.Поддержка</a>
+                    <a id="guarantees-link" href="#">Гарантии</a>
+                    <a id="support-link" href="#">Тех.Поддержка</a>
                 </div>
             </div>
             <div class="right-section">
@@ -823,7 +823,19 @@
                 if (modelsLink) {
                     modelsLink.href = `https://nosimprada.github.io/testweb/?tg_id=${tgId}`;
                 }
-                
+
+                const aboutLink = document.getElementById('about-link');
+                if (aboutLink) {
+                    aboutLink.href = `https://nosimprada.github.io/about/?tg_id=${tgId}`;
+                }
+                const supportLink = document.getElementById('support-link');
+                if (aboutLink) {
+                    supportLink.href = `https://nosimprada.github.io/support/?tg_id=${tgId}`;
+                }
+                const guaranteesLink = document.getElementById('guarantees-link');
+                if (aboutLink) {
+                    guaranteesLink.href = `https://nosimprada.github.io/guarantees/?tg_id=${tgId}`;
+                }
                 const ordersButton = document.getElementById('my-orders-button');
                 if (ordersButton) {
                     ordersButton.onclick = function() {
