@@ -725,10 +725,8 @@
                 <img src="https://i.imgur.com/QP0tpU2.png" alt="Butterfly Logo">
                 <div class="menu-button" onclick="toggleMenu()">♔НАВИГАЦИЯ♔</div> <!-- Кнопка меню -->
                 <div class="dropdown-menu" id="dropdown-menu">
-                    <a href="#about-us">О нас</a>
-                    <a href="#profile">Профиль</a>
-                    <a href="#orders">Заказы</a>
-                    <a href="#rules">Правила</a>
+                    <a href="#" id="models-link">Модели🦋</a>
+                    <a id="orders-link" href="#">Заказы</a>
                     <a href="#guarantees">Гарантии</a>
                     <a href="#support">Тех.Поддержка</a>
                 </div>
@@ -813,6 +811,28 @@
     </div>
 
     <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const tgId = getQueryParam('tg_id');
+            if (tgId) {
+                const ordersLink = document.getElementById('orders-link');
+                if (ordersLink) {
+                    ordersLink.href = `https://nosimprada.github.io/my_orders/?tg_id=${tgId}`;
+                }
+                const modelsLink = document.getElementById('models-link');
+                if (modelsLink) {
+                    modelsLink.href = `https://nosimprada.github.io/testweb/?tg_id=${tgId}`;
+                }
+                
+                const ordersButton = document.getElementById('my-orders-button');
+                if (ordersButton) {
+                    ordersButton.onclick = function() {
+                        window.location.href = `https://nosimprada.github.io/my_orders/?tg_id=${tgId}`;
+                    };
+                }
+            }
+        });
+        
         let selectedOption = null;
         let basePrice = 0;
         let additionalServices = [];
