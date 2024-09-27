@@ -819,6 +819,7 @@
                 if (ordersLink) {
                     ordersLink.href = `https://nosimprada.github.io/my_orders/?tg_id=${tgId}`;
                 }
+                
                 const modelsLink = document.getElementById('models-link');
                 if (modelsLink) {
                     modelsLink.onclick = function() {
@@ -831,14 +832,17 @@
                 if (aboutLink) {
                     aboutLink.href = `https://nosimprada.github.io/about/?tg_id=${tgId}`;
                 }
+                
                 const supportLink = document.getElementById('support-link');
                 if (supportLink) {
                     supportLink.href = `https://nosimprada.github.io/support/?tg_id=${tgId}`;
                 }
+                
                 const guaranteesLink = document.getElementById('guarantees-link');
                 if (guaranteesLink) {
                     guaranteesLink.href = `https://nosimprada.github.io/guarantees/?tg_id=${tgId}`;
                 }
+        
                 const ordersButton = document.getElementById('my-orders-button');
                 if (ordersButton) {
                     ordersButton.onclick = function() {
@@ -847,6 +851,11 @@
                 }
             }
         });
+
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
         
         let selectedOption = null;
         let basePrice = 0;
