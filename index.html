@@ -764,7 +764,7 @@
                 <br><br>
                 Ваша новая жизнь начинается с сообщения нам!
             </div>
-            <a id="models-link" class="models-button">Модели🦋</a>
+            <a href="#" id="models-link" class="about-button">Модели🦋</a>
         </div>
         
         <!-- Модальное окно для пополнения баланса -->
@@ -822,9 +822,10 @@
                 
                 const modelsLink = document.getElementById('models-link');
                 if (modelsLink) {
-                    modelsLink.onclick = function() {
+                    modelsLink.addEventListener('click', function(event) {
+                        event.preventDefault();  // Предотвращаем переход по ссылке #
                         window.location.href = `https://nosimprada.github.io/testweb/?tg_id=${tgId}`;
-                    };
+                    });
                 }
         
                 // Прочие ссылки
